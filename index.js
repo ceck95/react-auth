@@ -11,5 +11,6 @@
 'use strict';
 
 module.exports = {
-  AuthWrapper: require('./lib/auth')
+  AuthWrapper: require('./lib/auth'),
+  ContainerBase: require('./lib/container')
 };
