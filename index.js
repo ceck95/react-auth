@@ -12,5 +12,6 @@
 
 module.exports = {
   AuthWrapper: require('./lib/auth'),
-  ContainerBase: require('./lib/container')
+  ContainerBase: require('./lib/container'),
+  helpers: require('./include/helpers')
 };
