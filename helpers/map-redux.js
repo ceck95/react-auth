@@ -8,12 +8,13 @@
 
 'use strict';
 
-import {bindActionCreators} from 'redux';
+// import {bindActionCreators} from 'redux';
 
 class MapRedux {
 
-  constructor(data) {
-    this._actions = data;
+  constructor(options) {
+    this._actions = options.actions;
+    this._bindActionCreators = options.bindActionCreators;
   }
 
   mapStateToProps(state) {
@@ -22,7 +23,7 @@ class MapRedux {
 
   mapDispatchToProps(dispatch) {
     return {
-      actions: bindActionCreators(this._actions, dispatch)
+      actions: this._bindActionCreators(this._actions, dispatch)
     }
   }
 
