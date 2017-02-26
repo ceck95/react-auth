@@ -3,7 +3,7 @@
  * @Date:   2017-02-26T12:36:04+07:00
  * @Email:  tranvannhut4495@gmail.com
 * @Last modified by:   nhutdev
-* @Last modified time: 2017-02-26T13:31:37+07:00
+* @Last modified time: 2017-02-26T14:18:12+07:00
  */
 
 'use strict';
@@ -13,7 +13,7 @@ const _ = require('lodash');
 class Data {
 
   static assign(src, data) {
-    return _.merge(src, data);
+    return Object.assign({}, _.merge(src, data));
   }
 
   static toUnderscore(input) {
