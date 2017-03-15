@@ -3,7 +3,7 @@
  * @Date:   2017-02-26T12:36:04+07:00
  * @Email:  tranvannhut4495@gmail.com
 * @Last modified by:   root
-* @Last modified time: 2017-03-14T14:40:19+07:00
+* @Last modified time: 2017-03-15T12:49:56+07:00
  */
 
 'use strict';
@@ -26,7 +26,7 @@ class Data {
   }
 
   static isPhoneNumber(phone) {
-    let regexp = /^[\s()+-]*([0-9][\s()+-]*){9,10}$/;
+    let regexp = /^[\s()+-]*([0-9][\s()+-]*){9,11}$/;
     return regexp.test(phone);
   }
 
@@ -35,6 +35,20 @@ class Data {
       return true;
     }
     return false;
+  }
+
+  static isEmptyObject(obj) {
+    let arrayKeys = Object.keys(obj);
+    let checkNull = 0;
+    arrayKeys.forEach(e => {
+      if (obj[e]) {
+        checkNull++;
+      }
+    });
+    if (checkNull === arrayKeys.length) {
+      return false;
+    }
+    return true;
   }
 
 }
