@@ -3,7 +3,7 @@
  * @Date:   2017-02-26T12:36:04+07:00
  * @Email:  tranvannhut4495@gmail.com
 * @Last modified by:   root
-* @Last modified time: 2017-03-15T12:49:56+07:00
+* @Last modified time: 2017-03-16T08:29:17+07:00
  */
 
 'use strict';
@@ -31,24 +31,38 @@ class Data {
   }
 
   static isEmpty(string) {
-    if (string.trim() === '') {
+    let detectString = string.trim();
+    if (detectString === '' || !detectString) {
       return true;
     }
     return false;
   }
 
   static isEmptyObject(obj) {
-    let arrayKeys = Object.keys(obj);
-    let checkNull = 0;
-    arrayKeys.forEach(e => {
-      if (obj[e]) {
-        checkNull++;
+    if (typeof obj === 'object') {
+      let arrayKeys = Object.keys(obj);
+      if (arrayKeys.length === 0) {
+        return true;
       }
-    });
-    if (checkNull === arrayKeys.length) {
-      return false;
+      let checkNull = 0;
+      arrayKeys.forEach(e => {
+        if (typeof obj[e] !== 'object' ? Data.isEmpty(obj[e]) : obj[e]) {
+          checkNull++;
+        }
+      });
+      if (checkNull > 0) {
+        return false;
+      }
+      return true;
     }
-    return true;
+
+  }
+
+  static compareJSON(obj1, obj2) {
+    if (JSON.stringify(obj1) === JSON.stringify(obj2)) {
+      return true;
+    }
+    return false;
   }
 
 }
