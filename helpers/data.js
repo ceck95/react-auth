@@ -58,6 +58,13 @@ class Data {
 
   }
 
+  static isEmptyKeyObject(obj) {
+    if (Object.keys(obj).length === 0) {
+      return true;
+    }
+    return false;
+  }
+
   static compareJSON(obj1, obj2) {
     if (JSON.stringify(obj1) === JSON.stringify(obj2)) {
       return true;
