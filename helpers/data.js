@@ -2,8 +2,8 @@
  * @Author: Tran Van Nhut <nhutdev>
  * @Date:   2017-02-26T12:36:04+07:00
  * @Email:  tranvannhut4495@gmail.com
-* @Last modified by:   root
-* @Last modified time: 2017-03-16T08:29:17+07:00
+ * @Last modified by:   root
+ * @Last modified time: 2017-03-16T08:29:17+07:00
  */
 
 'use strict';
@@ -54,6 +54,25 @@ class Data {
         return false;
       }
       return true;
+    }
+
+  }
+
+  static isEmptyValueOfObject(obj) {
+
+    if (typeof obj === 'object') {
+      let checkNull = 0,
+        arrayKeys = Object.keys(obj);
+      arrayKeys.forEach(key => {
+        let pos = obj[key];
+        if (pos === '' || pos === null || !pos) {
+          checkNull++;
+        }
+      });
+      if (checkNull === arrayKeys.length) {
+        return true;
+      }
+      return false;
     }
 
   }
