@@ -75,6 +75,8 @@ class Data {
       return false;
     }
 
+    throw "Input don't have to object";
+
   }
 
   static isEmptyKeyObject(obj) {
