@@ -50,7 +50,7 @@ class Data {
           checkNull++;
         }
       });
-      if (checkNull > 0) {
+      if (checkNull === arrayKeys.length) {
         return false;
       }
       return true;
