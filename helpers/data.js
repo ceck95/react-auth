@@ -26,7 +26,7 @@ class Data {
   }
 
   static isPhoneNumber(phone) {
-    let regexp = /^[\s()+-]*([0-9][\s()+-]*){9,11}$/;
+    let regexp = /^[\s()+-]*([0-9][\s()+-]*){10,15}$/;
     return regexp.test(phone);
   }
 
